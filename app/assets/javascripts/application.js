@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require angular
-//= require Chart.js
+//= require Chart.min.js
 //= require tinycolor
 //= require angles
 //= require nanobar

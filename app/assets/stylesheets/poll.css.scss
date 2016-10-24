@@ -38,6 +38,10 @@ html, body {
   background: $white;
 }
 
+body {
+    padding-bottom: $footer-height;
+}
+
 h1 {
   display: inline-block;
 }
@@ -77,14 +81,17 @@ tbody tr:nth-child(odd) {
 .footer {
   background: rgba($white, 0.8);
   border-top: 1px solid $gray;
+  position: absolute;
+  bottom: -$footer-height;
+  left: 0;
+  right: 0;
 }
 
 .row {
   position: absolute;
-  top: 0; bottom: $footer-height; left: 0; right: 0;
+  top: 0; bottom: 0; left: 0; right: 0;
   display: flex;
   flex-flow: row wrap;
-  //background: red;
 }
 
 .col {
@@ -92,14 +99,12 @@ tbody tr:nth-child(odd) {
 }
 
 .col-left {
-  //background: green;
   flex: 4;
   min-width: 0px;
   min-height: 450px;
 }
 
 .col-right {
-  //background: blue;
   overflow: auto;
   background: $gray-light;
   flex: 1;
@@ -110,7 +115,6 @@ tbody tr:nth-child(odd) {
 
 
 .chart {
-  //background: orange;
   position: absolute;
   top: 20px; right: 20px; bottom: 20px; left: 20px;
   display: flex;
@@ -118,12 +122,11 @@ tbody tr:nth-child(odd) {
 }
 
 .chart__header {
-  //background: cyan;
+  font-size: 38px;
 }
 
 .chart__main {
   position: relative;
-  //background: magenta;
   flex: auto;
 }
 
@@ -150,9 +153,8 @@ body {
 }
 
 
-
 body, input[type=submit] {
-  font-family: "Oswald", sans-serif;
+  font-family: playfair-display, serif;
 }
 
 body {
@@ -168,12 +170,19 @@ h2, h3, h4, input[type=submit] {
   color: $gray-darker;
 }
 
+.options-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 800px;
+}
+
 .swatch {
   margin-bottom: 10px;
   text-align: left;
-
   display: flex;
   align-items: center;
+  width: 105px;
 }
 
 .swatch__circle {
@@ -189,9 +198,11 @@ h2, h3, h4, input[type=submit] {
   border-style: solid;
   border-radius: 100%;
   margin-right: 10px;
+  font-family: sans-serif;
 }
 
 .swatch__label {
+  font-family: sans-serif;
   display: block;
   font-weight: 100;
   margin-left: 66px;
@@ -219,9 +230,10 @@ fieldset {
 
 }
 
-a {
+a, .link {
   color: $red;
   text-decoration: none;
+  cursor: pointer;
 }
 
 input[type=text] {
@@ -254,7 +266,7 @@ input[type=text] {
   &.input--small {
     font-size: 0.8em;
     padding: 0;
-    width: 180px;
+    width: 200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -269,19 +281,19 @@ input[type=submit] {
   transition: all 200ms ease-in-out;
   cursor: pointer;
   outline: none;
-  width: 120px;
+  width: 360px;
   height: 120px;
   border: none;
   margin: 10px 0;
-  background: $green;
+  background-color: $green;
   color: $white;
   font-size: 24px;
   padding: 10px 15px;
-  border-radius: 100%;
   text-align: center;
   -webkit-appearance: none;
   &[disabled] {
     background: mix($gray, $gray-light);
+    cursor: auto;
   }
 }
 
